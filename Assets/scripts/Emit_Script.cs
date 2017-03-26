@@ -4,9 +4,10 @@ using MidiJack;
 
 // http://answers.unity3d.com/questions/423398/particle-burst-on-button-press.html
 
-public class Emit_Script :  MonoBehaviour {
+public class Emit_Script2:  MonoBehaviour {
 
 	public ParticleSystem particleSys;
+    public string systemName;
 	public string keyEvent;
 	public int midiChannel;
 	public int midiNote;
@@ -41,6 +42,8 @@ public class Emit_Script :  MonoBehaviour {
 		//Debug.Log("NoteOn: " + channel + "," + note + "," + velocity);
 
 		if (velocity > 0 && midiNote == note ) {
+
+            Debug.Log("Trigger: " + systemName);
 
 			int nParticles = (int)Remap (velocity, 0f, 1.0f, (float)minEmitParticles, (float)maxEmitParticles);
 
