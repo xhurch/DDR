@@ -13,6 +13,7 @@ public class Emit_Script :  MonoBehaviour {
 	public int numEmitParticles;
 	public int minEmitParticles;
 	public int maxEmitParticles;
+    public AudioSource audioSource;
 
 	void Start () {
 
@@ -45,7 +46,8 @@ public class Emit_Script :  MonoBehaviour {
 
 			//Debug.Log("Emitting " + nParticles + " particles");
 
-			particleSys.Emit (nParticles);  
+			particleSys.Emit (nParticles);
+            audioSource.Play();
 		}
 	}
 
